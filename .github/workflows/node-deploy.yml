@@ -17,12 +17,14 @@ jobs:
         sudo apt update
         sudo apt install -y protobuf-compiler
 
-
     - name: Install Rust
       run: |
         curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
         source $HOME/.cargo/env
 
+    - name: Install WASM target
+      run: rustup target add wasm32-unknown-unknown
+  
     - name: Build Substrate Node
       run: |
         cargo build --release
