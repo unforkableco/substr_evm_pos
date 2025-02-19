@@ -81,8 +81,8 @@ pub fn development_config(enable_manual_seal: bool) -> ChainSpec {
 
 pub fn local_testnet_config() -> ChainSpec {
 	ChainSpec::builder(WASM_BINARY.expect("WASM not available"), Default::default())
-		.with_name("Local Testnet")
-		.with_id("local_testnet")
+		.with_name("Development")
+		.with_id("development")
 		.with_chain_type(ChainType::Local)
 		.with_properties(properties())
 		.with_genesis_config_patch(testnet_genesis(
@@ -101,7 +101,7 @@ pub fn local_testnet_config() -> ChainSpec {
 				authority_keys_from_seed("Alice"),
 				authority_keys_from_seed("Bob"),
 			],
-			42,
+			1666,
 			false,
 		))
 		.build()
