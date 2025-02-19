@@ -38,7 +38,7 @@ After=network.target
 
 [Service]
 User=ubuntu
-ExecStart=/usr/local/bin/substrate-node --chain $CHAIN_SPEC --name "Test network" --rpc-external --ws-external --rpc-port $RPC_PORT --ws-port $WS_PORT --pruning=archive
+ExecStart=/usr/local/bin/substrate-node --name "Test network" --rpc-external --rpc-port $RPC_PORT --ws-port $WS_PORT --pruning=archive --rpc-cors all
 Restart=always
 RestartSec=10
 LimitNOFILE=4096
