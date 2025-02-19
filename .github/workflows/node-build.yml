@@ -1,4 +1,4 @@
-name: Deploy Substrate Node
+name: Build Substrate Node
 
 on:
   release:
