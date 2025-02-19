@@ -51,6 +51,11 @@ jobs:
         aws ec2 wait instance-status-ok --instance-ids $NODE_INSTANCE_ID
         echo "AWS instance is now running."
 
+    - name: Setup SSH Key
+      run: |
+          echo "${{ secrets.AWS_SSH_PRIVATE_KEY }}" > ~/.ssh/my-key.pem
+          chmod 600 ~/.ssh/my-key.pem
+
     - name: Log in to AWS Instance & Deploy Node
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
