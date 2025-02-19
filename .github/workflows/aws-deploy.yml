@@ -24,7 +24,7 @@ jobs:
       run: |
         INSTANCE_ID=$(aws ec2 run-instances --image-id ami-12345678 --count 1 --instance-type t3.medium \
           --key-name my-key --security-groups my-security-group \
-          --user-data file://setup_node.sh \
+          --user-data file://scripts/setup_node.sh \
           --query "Instances[0].InstanceId" --output text)
         
         echo "NODE_INSTANCE_ID=$INSTANCE_ID" >> $GITHUB_ENV
