@@ -53,8 +53,10 @@ jobs:
 
     - name: Setup SSH Key
       run: |
+          mkdir -p ~/.ssh  # Ensure the directory exists
           echo "${{ secrets.AWS_SSH_PRIVATE_KEY }}" > ~/.ssh/my-key.pem
           chmod 600 ~/.ssh/my-key.pem
+  
 
     - name: Log in to AWS Instance & Deploy Node
       env:
