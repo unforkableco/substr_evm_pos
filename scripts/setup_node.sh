@@ -4,7 +4,7 @@ set -e  # Exit immediately if any command fails
 export DEBIAN_FRONTEND=noninteractive
 
 # Variables
-GITHUB_REPO="unforkableco/subsr_evm_pos"
+GITHUB_REPO="unforkableco/substr_evm_pos"
 NODE_BINARY="main-node"
 CHAIN_SPEC="custom"  # Change to your chain's spec if needed
 RPC_PORT=9944
